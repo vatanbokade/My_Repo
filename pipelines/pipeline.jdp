@@ -1,25 +1,14 @@
-pipeline {
-    agent { label 'node' }
-    stages {
-        stage('Pull') { 
-            steps {
-                git branch: 'main', url: 'https://github.com/vatanbokade/My_Repo.git'
-            }
-        }
-         stage('Build') { 
-            steps {
-                echo "Build Done"
-            }
-        }
-        stage('Test') { 
-            steps {
-                echo "Test Done"
-            }
-        }
-        stage('Deploy') { 
-            steps {
-                echo "Deploy Done"
-            }
-        }
+node {  
+    stage('Pull') { 
+        git branch: 'main', url: 'https://github.com/vatanbokade/My_Repo.git'
+    }
+    stage('Build') { 
+        echo "Build Done"
+    }
+    stage('Test') { 
+        echo "Test Done"
+    }
+    stage('Deploy') { 
+        echo "Deploy Done"
     }
 }
