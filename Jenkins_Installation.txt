@@ -1,0 +1,20 @@
+Jenkins Installation for Redhat / CentOS
+
+	Yum install java-openjdk -y		#Java latest version will installed
+	yum install wget -y				#install wget cmd
+	get -O /etc/yum.repos.d/jenkins.repo \ https://pkg.jenkins.io/redhat-stable/jenkins.repo	#Download jenkins repo
+	wget --no-check-certificate -O /etc/yum.repos.d/jenkins.repo \ https://pkg.jenkins.io/redhat-stable/jenkins.repo	#If getting cert error then run this cmd
+	rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key	#Download this key for jenkins installation
+	yum upgrade		#upgrade yum
+	yum install epel-release -y		#if getting any daemonize error then run this cmd
+	yum install daemonize -y 		#if getting any daemonize error then run this cmd
+	yum clean all	#if getting any yum related error then rum this cmd
+	rm -rf /var/cache/yum/*		#if getting any yum related error then rum this cmd
+	yum install jenkins -y 		#install jenkins
+	systemctl start jenkins		#start jenkins 
+	systemctl enable jenkins	#enable jenkins
+	enable port 8080 for jenkins server 
+
+....................
+....................
+This is adding new file.
